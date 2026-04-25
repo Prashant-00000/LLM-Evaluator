@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  guardian-llm:
+    build: .
+    ports:
+      - "8501:8501"
+    environment:
+      GROQ_API_KEY: ${GROQ_API_KEY}
+      STREAMLIT_SERVER_HEADLESS: "true"
+    volumes:
+      - ./data:/app/data
+      - ./src:/app/src
+    command: streamlit run src/dashboard/streamlit_dashboard.py

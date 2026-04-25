@@ -1,0 +1,71 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "guardian-llm"
+version = "1.0.0"
+description = "Production-grade LLM safety evaluation framework with multi-metric assessment, red-teaming, and interactive dashboard"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Prashant", email = ""}
+]
+keywords = ["llm", "safety", "evaluation", "red-teaming", "ai-safety"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+requires-python = ">=3.9"
+
+dependencies = [
+    "groq>=0.4.0",
+    "python-dotenv>=1.0.0",
+    "pandas>=1.5.0",
+    "plotly>=5.0.0",
+    "streamlit>=1.28.0",
+    "transformers>=4.30.0",
+    "torch>=2.0.0",
+    "sentence-transformers>=2.2.0",
+    "numpy>=1.24.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "flake8>=6.0.0",
+    "isort>=5.12.0",
+    "mypy>=1.0.0",
+    "pre-commit>=3.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/guardian-llm"
+Documentation = "https://github.com/yourusername/guardian-llm/blob/main/README.md"
+Repository = "https://github.com/yourusername/guardian-llm"
+"Bug Tracker" = "https://github.com/yourusername/guardian-llm/issues"
+
+[tool.setuptools]
+packages = ["src"]
+
+[tool.black]
+line-length = 120
+target-version = ['py39', 'py310', 'py311']
+
+[tool.isort]
+profile = "black"
+line_length = 120
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false

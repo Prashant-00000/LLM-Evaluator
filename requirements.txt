@@ -1,0 +1,9 @@
+streamlit
+deepeval
+ragas
+transformers
+torch
+python-dotenv
+plotly
+sentence-transformers
+groq
